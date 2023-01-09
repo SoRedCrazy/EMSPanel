@@ -14,7 +14,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: AgentRepository::class)]
 #[Vich\Uploadable]
-#[UniqueEntity(fields: ['username'], message: 'test')]
+#[UniqueEntity(fields: ['username'], message: 'Username déjà prit')]
 class Agent implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
