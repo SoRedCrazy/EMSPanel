@@ -32,7 +32,7 @@ class AgentCrudController extends AbstractCrudController
             IntegerField::new('Num_telephone'),
             BooleanField::new('actif'),
             ArrayField::new('roles'),
-           Field::new('Password', 'New Password')->onlyWhenCreating()
+           Field::new('Password', 'New Password')->onlyOnForms()
             ->setFormType(RepeatedType::class)
             ->setFormTypeOptions([
                    'type' => PasswordType::class,
@@ -40,7 +40,7 @@ class AgentCrudController extends AbstractCrudController
                    'second_options' => ['label' => 'Repeat Password']
             ])->setRequired(true)
             ->setRequired($pageName === Crud::PAGE_NEW)
-            ->onlyWhenCreating(),
+            ->onlyOnForms(),
             ImageField::new('imageName', 'Image')
             ->hideOnForm()
             ->setBasePath('/avatar')

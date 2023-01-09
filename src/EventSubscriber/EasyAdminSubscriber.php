@@ -31,6 +31,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
     {
         return [
             BeforeEntityPersistedEvent::class => ['new'],
+            BeforeEntityUpdatedEvent::class => ['update'],
         ];
     }
 
