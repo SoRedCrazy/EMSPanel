@@ -46,8 +46,8 @@ class CitoyenCrudController extends AbstractCrudController
             ImageField::new('imageName', 'Image')
             ->hideOnForm()
             ->setBasePath('/avatar')
-            ->setUploadDir('public/avatar'),
-            Field::new('imageFile')->setFormType(VichImageType::class)->onlyOnForms(),
+            ->setUploadDir('public/avatar')->setFormTypeOptions(['required' => true]),
+            Field::new('imageFile')->setFormType(VichImageType::class)->onlyOnForms()->setFormTypeOptions(['required' => true]),
 
             AssociationField::new('blessures')->setCrudController(BlessureCrudController ::class)->hideOnForm(),
             AssociationField::new('certificats')->setCrudController(CertificatsCrudController::class)->hideOnForm(),
