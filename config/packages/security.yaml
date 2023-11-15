@@ -41,6 +41,7 @@ security:
         ROLE_CHIRURGIEN: ROLE_MEDECIN_CHEF
         ROLE_RESPONSABLE: ROLE_CHIRURGIEN
         ROLE_DIRECTEUR: ROLE_RESPONSABLE
+        ROLE_STAFF: ROLE_DIRECTEUR
 services:
     # default configuration for services in *this* file
     _defaults:
